@@ -197,8 +197,8 @@ async def process_text(request: TextRequest):
 async def process_audio(audio: UploadFile = File(...), language: str = Form(...)):
     print(f"Received audio: {audio.filename}, content_type: {audio.content_type}, language: {language}")
 
-    if audio.content_type not in {"audio/wav", "audio/x-wav", "audio/mpeg"}:
-        raise HTTPException(400, "Unsupported audio format. Use WAV 16 kHz or MP3.")
+    #if audio.content_type not in {"audio/wav", "audio/x-wav", "audio/mpeg"}:
+        #raise HTTPException(400, "Unsupported audio format. Use WAV 16 kHz or MP3.")
     return await process_audio_pipeline(audio, language)
 
 
